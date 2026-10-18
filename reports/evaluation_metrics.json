@@ -1,0 +1,15 @@
+{
+  "selected_model": "Gradient Boosting",
+  "best_parameters": {
+    "learning_rate": 0.05,
+    "max_depth": 2,
+    "n_estimators": 100
+  },
+  "test_accuracy": 0.6647043767596621,
+  "test_precision": 0.684244167465644,
+  "test_recall": 0.8692651238327244,
+  "test_f1": 0.7657367668097281,
+  "test_roc_auc": 0.700410676347899,
+  "positive_label": 1,
+  "target_label_semantics_confirmed": false
+}

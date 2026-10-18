@@ -1,0 +1,11 @@
+engine-predictive-maintenance/
+├── .github/
+│   └── workflows/
+│       └── pipeline.yml
+├── data/
+│   └── engine_data.csv
+├── data/processed/
+├── models/
+├── reports/
+├── engine_predictive_maintenance.ipynb
+└── requirements.txt
