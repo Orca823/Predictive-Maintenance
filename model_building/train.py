@@ -11,9 +11,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 import os
-from github import Github, GithubException
+#from github import Github, GithubException
 
-from pyngrok import ngrok
+#from pyngrok import ngrok
 import subprocess
 import mlflow
 
@@ -43,8 +43,9 @@ TARGET = "Engine Condition"
 process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
 
 # Create public tunnel
-public_url = ngrok.connect(5000).public_url
-print("MLflow UI is available at:", public_url)
+#public_url = ngrok.connect(5000).public_url
+#print("MLflow UI is available at:", public_url)
+public_url = "localhost:5000"
 
 # Set the tracking URL for MLflow
 mlflow.set_tracking_uri(public_url)
