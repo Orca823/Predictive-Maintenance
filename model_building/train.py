@@ -45,7 +45,7 @@ process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
 # Create public tunnel
 #public_url = ngrok.connect(5000).public_url
 #print("MLflow UI is available at:", public_url)
-public_url = "localhost:5000"
+public_url = "https://legibly-unwoven-oxidizing.ngrok-free.dev"
 
 # Set the tracking URL for MLflow
 mlflow.set_tracking_uri(public_url)
