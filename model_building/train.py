@@ -135,3 +135,23 @@ for name, (estimator, param_grid) in models.items():
 
 results_df = pd.DataFrame(results).sort_values("f1", ascending=False)
 print(results_df.round(4))
+
+# Find the best model based on F1
+best_name = max(searches, key=lambda name: searches[name].best_score_)
+best_search = searches[best_name]
+best_model = best_search.best_estimator_
+
+# Save model bundle as required by Streamlit deployment and CI/CD workflow
+deployment_dir = Path("deployment")
+deployment_dir.mkdir(parents=True, exist_ok=True)
+model_bundle = {
+    "model": best_model,
+    "feature_columns": list(X_train.columns),
+    "target_column": TARGET,
+    "positive_label": 1,
+    "target_label_semantics_confirmed": False,
+    "selected_model": best_name,
+    "best_params": best_search.best_params_,
+}
+joblib.dump(model_bundle, deployment_dir / "engine_condition_model.joblib")
+print("Saved best model deployment artifact successfully.")
