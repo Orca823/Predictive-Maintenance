@@ -3,14 +3,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# Load the model committed by the pipeline (sits next to this file)
 model_path = os.path.join(os.path.dirname(__file__), "engine_condition_model.joblib")
 model = joblib.load(model_path)
 
 st.title("Engine Predictive Maintenance App")
 st.write("""
 This application predicts the likelihood of engine issues based on its real-time sensor parameters.
-Enter the engine sensor measurements below to obtain a prediction.
 """)
 
 engine_rpm       = st.number_input("Engine RPM", 0, 3000, 700)
@@ -30,13 +28,9 @@ input_data = pd.DataFrame([{
 }])
 
 if st.button("Predict Engine Condition"):
-    # Predict using the model bundle
-    # If the loaded artifact is a bundle dict, get the estimator
     estimator = model["model"] if isinstance(model, dict) else model
     prediction = estimator.predict(input_data)[0]
-    
     result = "Engine Condition: Abnormal (1)" if prediction == 1 else "Engine Condition: Normal (0)"
-    st.subheader("Prediction Result:")
     if prediction == 1:
         st.error(f"The model predicts: **{result}**")
     else:
