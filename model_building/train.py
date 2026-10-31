@@ -25,7 +25,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 import joblib
 
-from IPython.display import display
+#from IPython.display import display
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
