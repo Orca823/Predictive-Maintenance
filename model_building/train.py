@@ -2,6 +2,42 @@
 import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
+from pathlib import Path
+import warnings
+import json
+import joblib
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import os
+from github import Github, GithubException
+
+from pyngrok import ngrok
+import subprocess
+import mlflow
+
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import make_column_transformer
+from sklearn.pipeline import make_pipeline
+import xgboost as xgb
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
+import joblib
+
+from IPython.display import display
+from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
+from sklearn.metrics import (
+    accuracy_score, precision_score, recall_score, f1_score,
+    roc_auc_score, classification_report, ConfusionMatrixDisplay,
+    RocCurveDisplay
+)
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.dummy import DummyClassifier
+
+RANDOM_STATE = 42
+TARGET = "Engine Condition"
 
 # Start MLflow UI on port 5000
 process = subprocess.Popen(["mlflow", "ui", "--port", "5000"])
