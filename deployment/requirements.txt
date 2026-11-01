@@ -1,3 +1,4 @@
+# Write pinned Python dependencies for reproducible Streamlit deployment.
 pandas==2.2.2
 scikit-learn==1.6.0
 xgboost==2.1.4
