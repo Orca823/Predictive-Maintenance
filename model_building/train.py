@@ -1,4 +1,4 @@
-
+# Write the standalone training script used by the automated model-training workflow.
 import mlflow
 import mlflow.sklearn
 from mlflow.models import infer_signature
