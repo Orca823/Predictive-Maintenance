@@ -1,3 +1,4 @@
+# Write the Streamlit interface that collects sensor values and displays a model prediction.
 import os
 import streamlit as st
 import pandas as pd
