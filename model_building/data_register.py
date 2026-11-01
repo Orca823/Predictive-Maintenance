@@ -1,3 +1,4 @@
+# Write a small registration script that loads the CSV and validates required columns.
 import pandas as pd
 from pathlib import Path
 
